@@ -1,0 +1,24 @@
+{
+  "name": "mantenimiento-maquinas",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.html",
+  "scripts": {
+    "start": "tailwindcss -i ./static/assets/styles/index.css -o ../static/tailwind.css --watch",
+    "build:tailwind": "tailwind build ./static/assets/styles/index.css -o assets/styles/tailwind.css",
+    "build:fontawesome": "mkdir -p ./static/assets/vendor/@fortawesome/fontawesome-free/webfonts && mkdir -p assets/vendor/@fortawesome/fontawesome-free/css && cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts assets/vendor/@fortawesome/fontawesome-free/ && cp ./node_modules/@fortawesome/fontawesome-free/css/all.min.css assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run build:fontawesome && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@tailwindcss/forms": "0.2.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}

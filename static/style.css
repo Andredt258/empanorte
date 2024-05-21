@@ -1,0 +1,79 @@
+.bg-login-img {
+    background-image: url('./img/arroz.jpg');
+}
+
+
+.bg-login-img2 {
+    background-image: url('./img/embasado.jpg');
+}
+
+
+.bg-login-img3 {
+    background-image: url('./img/soplado.jpg');
+}
+
+
+.bg-login-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+.opacity-100 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+.bg-login-img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+.opacity-0 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+.bg-login-img3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+}
+
+.opacity-0 {
+    opacity: 1;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+
+/* En tu archivo CSS */
+.footer {
+    background-color: #f3f4f6; /* Color de fondo */
+    color: black; /* Color del texto */
+    padding: 20px 0; /* Espaciado interno superior e inferior */
+    text-align: center; /* Centrado del texto */
+}
+
+.footer p {
+    margin: 0; /* Elimina el margen del párrafo dentro del footer */
+}
+
+
+
