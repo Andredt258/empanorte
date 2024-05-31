@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "index.html",
   "scripts": {
-    "start": "tailwindcss -i ./static/assets/styles/index.css -o ../static/tailwind.css --watch",
+    "start": "tailwindcss -i ./static/assets/styles/index.css -o ./static/tailwind.css --watch",
     "build:tailwind": "tailwind build ./static/assets/styles/index.css -o assets/styles/tailwind.css",
     "build:fontawesome": "mkdir -p ./static/assets/vendor/@fortawesome/fontawesome-free/webfonts && mkdir -p assets/vendor/@fortawesome/fontawesome-free/css && cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts assets/vendor/@fortawesome/fontawesome-free/ && cp ./node_modules/@fortawesome/fontawesome-free/css/all.min.css assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run build:fontawesome && npm start"

@@ -16,11 +16,14 @@
 
     <title>{% block title %} {% endblock %}</title>
 </head>  
-<body>
+<body class="relative">
     {% include 'layouts/partials/menu.html' %}
     <main>
         {% block content %}{% endblock content %} 
     </main>
     {% block scrips %}{% endblock %}
+
+
 </body>
+
 </html>

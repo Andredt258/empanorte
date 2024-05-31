@@ -3,6 +3,20 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 
+
+
+class Planta(models.Model):
+    planta = models.IntegerField()
+    #tipomaquina
+    #numeromaquina
+    class Meta:
+        verbose_name = "Planta"
+        verbose_name_plural = "Plantas"
+
+    def __str__(self):
+        return str(self.planta)
+
+
 class Perfil(models.Model):
     choices = [
         ('CC', 'Cédula de Ciudadanía'),
@@ -15,25 +29,16 @@ class Perfil(models.Model):
     
     type_document = models.CharField(max_length=2,blank=True, null=True,choices=choices,default="CC")
     nuip = models.CharField(unique=True, null=True,blank=True,max_length=11)
-    
+    planta = models.ForeignKey(Planta, on_delete=models.CASCADE, null=True, blank=True)
+    telefono = models.CharField(blank=True,max_length=10)
+
     class Meta:
         verbose_name = ("Perfil")
         verbose_name_plural = ("Perfiles")
         
     def __str__(self):
         return f"{self.user} {self.user.username}"
-    
 
-class Planta(models.Model):
-        
-    planta = models.IntegerField(max_length=1,)
-    
-    class Meta:
-        verbose_name = "Planta"
-        verbose_name_plural = "Plantas"
-        
-    def __str__(self):
-        return self.nombre
 
 class Reporte(models.Model):
     perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
@@ -46,7 +51,7 @@ class Reporte(models.Model):
         verbose_name_plural = "Reportes"
         
     def __str__(self):
-        return f"Reporte de {self.perfil.user.username} para {self.planta.nombre} el {self.fecha_reporte.strftime('%Y-%m-%d %H:%M:%S')}"
+        return f"Reporte de {self.perfil.user.username} para {self.planta.planta} el {self.fecha_reporte.strftime('%Y-%m-%d %H:%M:%S')}"
     
     
     

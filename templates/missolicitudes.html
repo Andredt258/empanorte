@@ -7,7 +7,7 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">
    
-    <div class="relative md:ml-64 bg-gray-100">
+    <div class="relative md:ml-64 bg-gray-100 min-h-screen">
       <nav
         class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
       >
@@ -30,7 +30,7 @@
             >
               <div class="items-center flex">
                 <span
-                  class="w-16 h-16 text-sm bg-white text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+                  class="w-16 h-16 text-sm bg-white text-white inline-flex items-center justify-center rounded-full"
                   ><img
                     alt="..."
                     class="w-full rounded-full align-middle border-none shadow-lg"
@@ -42,26 +42,12 @@
               class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
               id="user-dropdown"
             >
+              
+            
               <a
-                href="#pablo"
+                href="{% url 'logout' %}"
                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                >Action</a
-              ><a
-                href="#pablo"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                >Another action</a
-              ><a
-                href="#pablo"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                >Something else here</a
-              >
-              <div
-                class="h-0 my-2 border border-solid border-blueGray-100"
-              ></div>
-              <a
-                href="#pablo"
-                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                >Seprated link</a
+                >Cerrar sesión</a
               >
             </div>
           </ul>
@@ -103,11 +89,7 @@
                       >
                         Fecha
                       </th>
-                      <th
-                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      >
-                        Maquina
-                      </th>
+                      
                       <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       >
@@ -118,503 +100,69 @@
                       >
                         Descripcion
                       </th>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-
-                        />
-                        <span class="ml-3 font-bold text-blueGray-600">
-                          fecha de creacion de las solicitudes
-                        </span>
-                      </th>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        Maquina que requiere mantenimiento
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <i class="fas fa-circle text-orange-500 mr-2"></i>
-                        pending
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        
-                        descrpcion de la averia
-                      </td>
-                      <td
-                      >
-                        
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                      >
-                        <a
-                          href="#pablo"
-                          class="text-blueGray-500 block py-1 px-3"
-                          onclick="openDropdown(event,'table-light-1-dropdown')"
+                      <tr>
+                        <th
+                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                         >
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div
-                          class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                          id="table-light-1-dropdown"
+                          <span class="ml-3 font-bold text-blueGray-600">
+                            Fecha de creación
+                          </span>
+                        </th> 
+                        <td
+                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                        >
+                          revisando
+                        </td>
+                        <td
+                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                        >
+                          <button
+                            class="bg-gray-50 text-black font-semibold uppercase text-xs px-3 py-2 rounded shadow hover:shadow-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            type="button"
+                            onclick="toggleModal('regular-modal-id')"
+                          >
+                            Ver descripción
+                          </button>
+                        </td>
+                        <td
+                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
                         >
                           <a
                             href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Another action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Something else here</a
+                            class="text-blueGray-500 block py-1 px-3"
+                            onclick="openDropdown(event,'table-light-2-dropdown')"
                           >
+                            <i class="fas fa-ellipsis-v"></i>
+                          </a>
                           <div
-                            class="h-0 my-2 border border-solid border-blueGray-100"
-                          ></div>
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Seprated link</a
+                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                            id="table-light-2-dropdown"
                           >
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-                      >
-                        <img
-                          src="../../assets/img/angular.jpg"
-                          class="h-12 w-12 bg-white rounded-full border"
-                          alt="..."
-                        />
-                        <span class="ml-3 font-bold text-blueGray-600">
-                          Angular Now UI Kit PRO
-                        </span>
-                      </th>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        $1,800 USD
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <i class="fas fa-circle text-emerald-500 mr-2"></i>
-                        completed
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex">
-                          <img
-                            src="../../assets/img/team-1-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-                          />
-                          <img
-                            src="../../assets/img/team-2-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-3-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-4-470x470.png"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex items-center">
-                          <span class="mr-2">100%</span>
-                          <div class="relative w-full">
-                            <div
-                              class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
+                            <a
+                              href="#pablo"
+                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                              >Action</a
+                            ><a
+                              href="#pablo"
+                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                              >Another action</a
+                            ><a
+                              href="#pablo"
+                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                              >Something else here</a
                             >
-                              <div
-                                style="width: 100%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                      >
-                        <a
-                          href="#pablo"
-                          class="text-blueGray-500 block py-1 px-3"
-                          onclick="openDropdown(event,'table-light-2-dropdown')"
-                        >
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div
-                          class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                          id="table-light-2-dropdown"
-                        >
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Another action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Something else here</a
-                          >
-                          <div
-                            class="h-0 my-2 border border-solid border-blueGray-100"
-                          ></div>
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Seprated link</a
-                          >
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-                      >
-                        <img
-                          src="../../assets/img/sketch.jpg"
-                          class="h-12 w-12 bg-white rounded-full border"
-                          alt="..."
-                        />
-                        <span class="ml-3 font-bold text-blueGray-600">
-                          Black Dashboard Sketch
-                        </span>
-                      </th>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        $3,150 USD
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <i class="fas fa-circle text-red-500 mr-2"></i>
-                        delayed
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex">
-                          <img
-                            src="../../assets/img/team-1-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-                          />
-                          <img
-                            src="../../assets/img/team-2-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-3-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-4-470x470.png"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex items-center">
-                          <span class="mr-2">73%</span>
-                          <div class="relative w-full">
                             <div
-                              class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
+                              class="h-0 my-2 border border-solid border-blueGray-100"
+                            ></div>
+                            <a
+                              href="#pablo"
+                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+                              >Seprated link</a
                             >
-                              <div
-                                style="width: 73%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                              ></div>
-                            </div>
                           </div>
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                      >
-                        <a
-                          href="#pablo"
-                          class="text-blueGray-500 block py-1 px-3"
-                          onclick="openDropdown(event,'table-light-3-dropdown')"
-                        >
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div
-                          class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                          id="table-light-3-dropdown"
-                        >
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Another action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Something else here</a
-                          >
-                          <div
-                            class="h-0 my-2 border border-solid border-blueGray-100"
-                          ></div>
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Seprated link</a
-                          >
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-                      >
-                        <img
-                          src="../../assets/img/react.jpg"
-                          class="h-12 w-12 bg-white rounded-full border"
-                          alt="..."
-                        />
-                        <span class="ml-3 font-bold text-blueGray-600">
-                          React Material Dashboard
-                        </span>
-                      </th>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        $4,400 USD
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <i class="fas fa-circle text-teal-500 mr-2"></i> on
-                        schedule
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex">
-                          <img
-                            src="../../assets/img/team-1-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-                          />
-                          <img
-                            src="../../assets/img/team-2-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-3-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-4-470x470.png"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex items-center">
-                          <span class="mr-2">90%</span>
-                          <div class="relative w-full">
-                            <div
-                              class="overflow-hidden h-2 text-xs flex rounded bg-teal-200"
-                            >
-                              <div
-                                style="width: 90%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-teal-500"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                      >
-                        <a
-                          href="#pablo"
-                          class="text-blueGray-500 block py-1 px-3"
-                          onclick="openDropdown(event,'table-light-4-dropdown')"
-                        >
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div
-                          class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                          id="table-light-4-dropdown"
-                        >
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Another action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Something else here</a
-                          >
-                          <div
-                            class="h-0 my-2 border border-solid border-blueGray-100"
-                          ></div>
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Seprated link</a
-                          >
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
-                      >
-                        <img
-                          src="../../assets/img/vue.jpg"
-                          class="h-12 w-12 bg-white rounded-full border"
-                          alt="..."
-                        />
-                        <span class="ml-3 font-bold text-blueGray-600">
-                          React Material Dashboard
-                        </span>
-                      </th>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        $2,200 USD
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <i class="fas fa-circle text-emerald-500 mr-2"></i>
-                        completed
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex">
-                          <img
-                            src="../../assets/img/team-1-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow"
-                          />
-                          <img
-                            src="../../assets/img/team-2-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-3-800x800.jpg"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                          <img
-                            src="../../assets/img/team-4-470x470.png"
-                            alt="..."
-                            class="w-10 h-10 rounded-full border-2 border-blueGray-50 shadow -ml-4"
-                          />
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                      >
-                        <div class="flex items-center">
-                          <span class="mr-2">100%</span>
-                          <div class="relative w-full">
-                            <div
-                              class="overflow-hidden h-2 text-xs flex rounded bg-emerald-200"
-                            >
-                              <div
-                                style="width: 100%"
-                                class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                      >
-                        <a
-                          href="#pablo"
-                          class="text-blueGray-500 block py-1 px-3"
-                          onclick="openDropdown(event,'table-light-5-dropdown')"
-                        >
-                          <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                        <div
-                          class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                          id="table-light-5-dropdown"
-                        >
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Another action</a
-                          ><a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Something else here</a
-                          >
-                          <div
-                            class="h-0 my-2 border border-solid border-blueGray-100"
-                          ></div>
-                          <a
-                            href="#pablo"
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                            >Seprated link</a
-                          >
-                        </div>
-                      </td>
-                    </tr>
+                        </td>
+                      </tr>
+                      
                   </tbody>
                 </table>
               </div>
@@ -625,6 +173,69 @@
       </div>
     </div>
   </div>
+  <div
+  class="hidden z-40 bg-black bg-opacity-70 absolute top-0 left-0 w-full h-full"
+  id="regular-modal-id-backdrop"
+>
+<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-30 outline-none focus:outline-none justify-center items-center px-8" id="regular-modal-id">
+  <div class="relative w-auto my-6 mx-auto max-w-3xl">
+    <!--content-->
+    <div
+      class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+    >
+      <!--header-->
+      <div
+        class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
+      >
+        <h3 class="text-3xl font-semibold">USUARIO</h3>
+        <button
+          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+          onclick="toggleModal('regular-modal-id')"
+        >
+          <span
+            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+          >
+            ×
+          </span>
+        </button>
+      </div>
+      <!--body-->
+      <div class="relative p-6 flex-auto">
+        <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+          DESCRIPCION DE LA AVERIA
+        </p>
+      </div>
+      <!--footer-->
+      <div
+        class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
+      >
+        <button
+          class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onclick="toggleModal('regular-modal-id')"
+        >
+          Close
+        </button>
+        <button
+          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="button"
+          onclick="toggleModal('regular-modal-id')"
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+  function toggleModal(modalID) {
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+  }
+</script>
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
   <script type="text/javascript">
     /* Make dynamic date appear */
