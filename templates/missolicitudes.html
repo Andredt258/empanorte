@@ -7,9 +7,13 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">
    
-    <div class="relative md:ml-64 bg-gray-100 min-h-screen">
-      <nav
-        class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
+    <div class="md:ml-64 bg-gray-100 min-h-screen">
+      <!-- Header -->
+<div class=" bg-gray-400 pb-32 pt-6">
+    <div class="px-4 md:px-10 mx-auto w-full">
+      <div>
+        <nav
+        class="w-full bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center"
       >
         <div
           class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
@@ -53,116 +57,106 @@
           </ul>
         </div>
       </nav>
-      <!-- Header -->
-<div class="relative bg-gray-400 md:pt-32 pb-32 pt-12">
-    <div class="px-4 md:px-10 mx-auto w-full">
-      <div>
-        
       </div>
     </div>
   </div>
   <div class="px-4 md:px-10 mx-auto w-full -m-24">
     <div class="flex flex-wrap mt-4">
       <div class="w-full mb-12 px-4">
-        <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-200">
-          <div class="bg-white rounded-t mb-0 px-4 py-3 border-0">
+        <div class=" flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-200">
+          <div class="bg-gray-200 rounded-t mb-0 px-4 py-3 border-0">
             <div class="flex flex-wrap items-center">
-              <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+              <div class=" w-full px-4 max-w-full flex-grow flex-1">
                 <h3 class=" text-center font-semibold text-lg text-blueGray-700">
                   
-  
+
                       Todas mis Solicitudes
                     </h3>
                   </div>
                 </div>
               </div>
               <div class="block w-full overflow-x-auto">
-               
-                <!-- Projects table -->
-                <table
-                  class="items-center w-full bg-transparent border-collapse"
-                >
+                <table class="items-center w-full bg-transparent border-collapse">
                   <thead>
                     <tr>
-                      <th
-                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      >
-                        Fecha
-                      </th>
-                      
-                      <th
-                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      >
-                        Status
-                      </th>
-                      <th
-                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      >
-                        Descripcion
-                      </th>
-                      <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+                      <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">Tipo de máquina</th>
+                      <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">Avería</th>
+                      <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">Descripción</th>
+                      <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">Fecha de creación</th>
+                      <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-blueGray-50 text-blueGray-500 border-blueGray-100">Usuario</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for solicitud in solicitudes %}
+                    <tr>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ solicitud.maquina }}</td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ solicitud.averia }}</td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        
+                        <button
+                          class="bg-gray-50 text-black font-semibold uppercase text-xs px-3 py-2 rounded shadow hover:shadow-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                          type="button"
+                          onclick="toggleModal('regular-modal-id-{{solicitud.id}}')"
                         >
-                          <span class="ml-3 font-bold text-blueGray-600">
-                            Fecha de creación
-                          </span>
-                        </th> 
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
-                          revisando
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                        >
-                          <button
-                            class="bg-gray-50 text-black font-semibold uppercase text-xs px-3 py-2 rounded shadow hover:shadow-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                            type="button"
-                            onclick="toggleModal('regular-modal-id')"
-                          >
-                            Ver descripción
-                          </button>
-                        </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
-                        >
-                          <a
-                            href="#pablo"
-                            class="text-blueGray-500 block py-1 px-3"
-                            onclick="openDropdown(event,'table-light-2-dropdown')"
-                          >
-                            <i class="fas fa-ellipsis-v"></i>
-                          </a>
-                          <div
-                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                            id="table-light-2-dropdown"
-                          >
-                            <a
-                              href="#pablo"
-                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                              >Action</a
-                            ><a
-                              href="#pablo"
-                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                              >Another action</a
-                            ><a
-                              href="#pablo"
-                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                              >Something else here</a
-                            >
-                            <div
-                              class="h-0 my-2 border border-solid border-blueGray-100"
-                            ></div>
-                            <a
-                              href="#pablo"
-                              class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-                              >Seprated link</a
-                            >
+                          Ver descripción
+                        </button>
+                        <div class="hidden z-40 bg-black bg-opacity-70 absolute top-0 left-0 w-full h-full" id="regular-modal-id-{{solicitud.id}}-backdrop">
+                          <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-30 outline-none focus:outline-none justify-center items-center px-8" id="regular-modal-id-{{solicitud.id}}">
+                            <div class="relative w-auto my-6 mx-auto max-w-3xl">
+                              <!--content-->
+                              <div
+                                class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+                              >
+                                <!--header-->
+                                <div
+                                  class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
+                                >
+                                  <h3 class="text-3xl font-semibold">USUARIO</h3>
+                                  <button
+                                    class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                    onclick="toggleModal('regular-modal-id-{{solicitud.id}}')"
+                                  >
+                                    <span
+                                      class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
+                                    >
+                                      ×
+                                    </span>
+                                  </button>
+                                </div>
+                                <!--body-->
+                                <div class="relative p-6 flex-auto">
+                                  <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
+                                    {{ solicitud.descripcion }}
+                                  </p>
+                                </div>
+                                <!--footer-->
+                                <div
+                                  class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
+                                >
+                                  <button
+                                    class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button"
+                                    onclick="toggleModal('regular-modal-id-{{solicitud.id}}')"
+                                  >
+                                    Close
+                                  </button>
+                                  <button
+                                    class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button"
+                                    onclick="toggleModal('regular-modal-id-{{solicitud.id}}')"
+                                  >
+                                    Save Changes
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
-                        </td>
-                      </tr>
-                      
+                        </div>
+                      </td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ solicitud.fecha_creacion }}</td>
+                      <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ solicitud.usuario }}</td>
+                    </tr>
+                    {% endfor %}
                   </tbody>
                 </table>
               </div>
@@ -173,61 +167,7 @@
       </div>
     </div>
   </div>
-  <div
-  class="hidden z-40 bg-black bg-opacity-70 absolute top-0 left-0 w-full h-full"
-  id="regular-modal-id-backdrop"
->
-<div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-30 outline-none focus:outline-none justify-center items-center px-8" id="regular-modal-id">
-  <div class="relative w-auto my-6 mx-auto max-w-3xl">
-    <!--content-->
-    <div
-      class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-    >
-      <!--header-->
-      <div
-        class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
-      >
-        <h3 class="text-3xl font-semibold">USUARIO</h3>
-        <button
-          class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-          onclick="toggleModal('regular-modal-id')"
-        >
-          <span
-            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
-          >
-            ×
-          </span>
-        </button>
-      </div>
-      <!--body-->
-      <div class="relative p-6 flex-auto">
-        <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-          DESCRIPCION DE LA AVERIA
-        </p>
-      </div>
-      <!--footer-->
-      <div
-        class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
-      >
-        <button
-          class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-          type="button"
-          onclick="toggleModal('regular-modal-id')"
-        >
-          Close
-        </button>
-        <button
-          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-          type="button"
-          onclick="toggleModal('regular-modal-id')"
-        >
-          Save Changes
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+  
 <script type="text/javascript">
   function toggleModal(modalID) {
     document.getElementById(modalID).classList.toggle("hidden");

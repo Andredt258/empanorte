@@ -52,6 +52,20 @@ class Reporte(models.Model):
         
     def __str__(self):
         return f"Reporte de {self.perfil.user.username} para {self.planta.planta} el {self.fecha_reporte.strftime('%Y-%m-%d %H:%M:%S')}"
+    # models.py
+
+
+class SolicitudMantenimiento(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    maquina = models.CharField(max_length=100)
+    averia = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    fecha_creacion = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.usuario} - {self.maquina} - {self.fecha_creacion.strftime('%Y-%m-%d %H:%M:%S')}"
+
+
     
     
     
